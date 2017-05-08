@@ -75,3 +75,4 @@
   until: result.status == 200
   retries: 60
   delay: 10
+  when: spring_boot_wait_for_app|bool
