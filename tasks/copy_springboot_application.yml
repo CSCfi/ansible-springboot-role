@@ -7,7 +7,7 @@
   when: not spring_boot_file.stat.exists
 
 - name: "copy spring boot file"
-  command: cp "{{ spring_boot_file_source }}" "{{ spring_boot_user_dir }}"/"{{ spring_boot_file.stat.path | basename }}"
+  command: cp {{ spring_boot_file_source }} {{ spring_boot_user_dir }}/{{ spring_boot_file.stat.path | basename }}
   when: spring_boot_file.stat.exists
 
 - debug: msg="spring boot file '{{ spring_boot_file_source }}' not found"
