@@ -20,8 +20,8 @@
 - name: "create spring-boot user"
   user: name={{ spring_boot_username }} group={{ spring_boot_username }} comment="user for application {{ spring_boot_application_id }}"
 
-- name: "create spring-boot configuration"
-  template: src=application.properties.j2 dest={{ spring_boot_user_dir }}/application-{{ spring_boot_profile}}.properties owner={{ spring_boot_username }} group={{ spring_boot_username }}
+#- name: "create spring-boot configuration"
+#  template: src=application.properties.j2 dest={{ spring_boot_user_dir }}/application-{{ spring_boot_profile}}.properties owner={{ spring_boot_username }} group={{ spring_boot_username }}
 
 - name: "create spring-boot initscript configuration"
   template: src=initscript.conf.j2 dest={{ spring_boot_user_dir }}/{{ spring_boot_application_id}}.conf owner={{ spring_boot_username }} group={{ spring_boot_username }}
