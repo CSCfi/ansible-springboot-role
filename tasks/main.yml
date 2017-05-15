@@ -64,15 +64,14 @@
 - name: "enable spring-boot service"
   service: name={{ spring_boot_application_id }} enabled=yes
 
-- name: "start spring-boot service"
-  service: name={{ spring_boot_application_id }} state=restarted
+# - name: "start spring-boot service"
+#   service: name={{ spring_boot_application_id }} state=restarted
 
-- name: "wait for application to come up"
-  uri:
-    url: "http://127.0.0.1:{{spring_boot_http_port}}/"
-    status_code: 200
-  register: result
-  until: result.status == 200
-  retries: 60
-  delay: 10
-  when: spring_boot_wait_for_app|bool
+# - name: "wait for application to come up"
+#   uri:
+#     url: "http://127.0.0.1:{{spring_boot_http_port}}/"
+#     status_code: 200
+#   register: result
+#   until: result.status == 200
+#   retries: 60
+#   delay: 10
